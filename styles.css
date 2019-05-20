@@ -1,0 +1,31 @@
+.container{
+	margin: 25px;
+
+ 
+}
+#countries{
+	
+	float: left;
+	
+
+}
+
+#rank{
+	
+	padding-left: 220px;
+	width: 800px;
+	
+
+}
+
+#players{
+	
+	float: right;
+	
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #89FADF;
+}
+.position{
+	font: bold;
+}
