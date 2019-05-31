@@ -1,5 +1,6 @@
 .container{
-	margin: 25px;
+	margin: 15px;
+	
 
  
 }
@@ -7,12 +8,11 @@
 	
 	float: left;
 	
-
 }
 
 #rank{
 	
-	padding-left: 220px;
+	padding-left: 240px;
 	width: 800px;
 	
 
@@ -28,4 +28,19 @@
 }
 .position{
 	font: bold;
+}
+.team{
+	font-weight: bold;
+
+}
+.btn {
+  border: none;
+  background-color: inherit;
+  display: inline-block;
+  
+}
+.btn:hover {
+  background-color: #ffebe6; 
+  color: blue;
+  font-weight: bold;
 }
