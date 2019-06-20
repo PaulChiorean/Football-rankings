@@ -1,21 +1,19 @@
-.container{
+/*.container{
 	display: flex;
 	justify-content: space-between;
 }
 
-.container-players {
+.team {
 	display: flex;
     flex-direction: column;
     align-items: center
-}
+}*/
 
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
   background-color: #89FADF;
 }
-.position{
-	font: bold;
-}
-.team{
+
+.poz{
 	font-weight: bold;
 
 }
@@ -29,4 +27,10 @@
   background-color: #ffebe6; 
   color: blue;
   font-weight: bold;
+}
+.ranking {
+  display: none;
+}
+.team {
+  display: none;
 }

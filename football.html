@@ -9,8 +9,9 @@
 <body>
 
 	<div class="container">
-		<div class="container-countries" id="countries">
-			<p>Tari</p>
+		<div class="row">
+		<div class="countries col-lg-3">
+			<p class="pss">Tari</p>
 			<ul class="coutry-list">
 				<li>
 					<button class="btn btn-link" data-toggle="collapse" data-target="#collapseEnglish">
@@ -18,7 +19,7 @@
 					</button>
 					<div id="collapseEnglish" class="collapse" data-parent="#accordion">
 						<ul>
-							<li><button class="btn premierleague">Premier League</button></li>
+							<li><button class="btn premierleague" id="premierleague">Premier League</button></li>
 							<li><button class="btn championship">Championship</button></li>
 						</ul>
 					</div>
@@ -59,7 +60,7 @@
 			</ul>
 		</div>
 
-		<div class="container-rank" id="rank">
+		<div class="ranking col-lg-7" id="ranking">
 			<p>Clasament</p>
 			<table class="table table-striped table-hover">
 				<thead>
@@ -87,7 +88,7 @@
 					</tr>
 					<tr>
 						<th scope="row">2</th>
-						<td>Liverpool</td>
+						<td id="liverpool">Liverpool</td>
 						<td>38</td>
 						<td>30</td>
 						<td>7</td>
@@ -278,28 +279,29 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="container-players" id="players">
+		<div class="team col-lg-2" id="team">
 			<p>Jucatori</p>
 			<ul class="list-group">
 				<li class="list-group-item">
 					<img src="https://d3j2s6hdd6a7rg.cloudfront.net/v2/JE-271/lfc/images/logo.png"></li>
 				<li class="list-group-item">
-					<p class="team">Manager</p>Jurgen Klopp
+					<p class="poz">Manager</p>Jurgen Klopp
 				</li>
 				<li class="list-group-item">
-					<p class="team">Goalkeepers</p>13 Alison Becker<br> 22 Simon Mingolet <br>62 Caoimhin Kelleher
+					<p class="poz">Goalkeepers</p>13 Alison Becker<br> 22 Simon Mingolet <br>62 Caoimhin Kelleher
 				</li>
 				<li class="list-group-item">
-					<p class="team">DEFENDERS</p>4 Virgil van Dijk<br>6 Dejan Lovren<br>12 Joe Gomez<br>18 Alberto Moreno<br>26 Andy Robertson<br>32 Joel Matip<br>47 Nathanniel Phillips<br>66 Trent Alexander-Arnold 
+					<p class="poz">DEFENDERS</p>4 Virgil van Dijk<br>6 Dejan Lovren<br>12 Joe Gomez<br>18 Alberto Moreno<br>26 Andy Robertson<br>32 Joel Matip<br>47 Nathanniel Phillips<br>66 Trent Alexander-Arnold 
 				</li>
 				<li class="list-group-item">
-					<p class="team">MIDFIELDERS</p>3 Fabinho<br>5 Georginio Wijnaldum<br>7 James Milner<br>8 Naby Keita<br>14 Jordan Henderson<br>20 Adam Lallana<br>21 Alex Oxlade-Chamberlain<br>23 Xherdan Shaqiri<br>48 Curtis Jones<br>58 Ben Woodburn<br>64 Rafael Camacho
+					<p class="poz">MIDFIELDERS</p>3 Fabinho<br>5 Georginio Wijnaldum<br>7 James Milner<br>8 Naby Keita<br>14 Jordan Henderson<br>20 Adam Lallana<br>21 Alex Oxlade-Chamberlain<br>23 Xherdan Shaqiri<br>48 Curtis Jones<br>58 Ben Woodburn<br>64 Rafael Camacho
 				</li>
 				<li class="list-group-item">
-					<p class="team">FORWARDS</p>9 Roberto Firmino<br>10 Sadio Mane<br>11 Mohamed Salah<br>15 Daniel Sturridge<br>24 Rhian Brewster<br>27 Divock Origi
+					<p class="poz">FORWARDS</p>9 Roberto Firmino<br>10 Sadio Mane<br>11 Mohamed Salah<br>15 Daniel Sturridge<br>24 Rhian Brewster<br>27 Divock Origi
 				</li>
 			</ul>
 		</div>
+	</div>
 	</div>
 
 
@@ -312,6 +314,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="fball.js"></script>
+	<script type="text/javascript" src="football.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 </body>
 </html>
