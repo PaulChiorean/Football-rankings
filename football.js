@@ -1,7 +1,10 @@
-$("#premierleague").click(function(){
-    $("#ranking").toggle();
-  });
 
-$("#liverpool").click(function(){
-    $("#team").toggle();
-  });
+$(document).ready(function() {
+    $(".country-list .collapse .btn").click(function () {
+        $("#ranking").show();
+    });
+
+    $(".ranking table tbody tr").click(function () {
+        $("#team").show();
+    });
+});
