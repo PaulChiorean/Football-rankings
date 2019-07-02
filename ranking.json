@@ -1,0 +1,23 @@
+{
+  "lastUpdate": 12342365364,
+  "ranking": [
+    {
+      "id": 1,
+      "name": "Man City",
+      "ranking": 1,
+      "played": 38,
+      "win": 32,
+      "draw": 2,
+      "lost": 4
+    },
+    {
+      "id": 2,
+      "name": "Liverpool",
+      "ranking": 2,
+      "played": 38,
+      "win": 32,
+      "draw": 2,
+      "lost": 4,
+    }
+  ]
+}

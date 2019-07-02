@@ -1,0 +1,36 @@
+/*.container{
+	display: flex;
+	justify-content: space-between;
+}
+
+.team {
+	display: flex;
+    flex-direction: column;
+    align-items: center
+}*/
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #89FADF;
+}
+
+.poz{
+	font-weight: bold;
+
+}
+.btn {
+  border: none;
+  background-color: inherit;
+  display: inline-block;
+  
+}
+.btn:hover {
+  background-color: #ffebe6; 
+  color: blue;
+  font-weight: bold;
+}
+.ranking {
+  display: none;
+}
+.team {
+  display: none;
+}
