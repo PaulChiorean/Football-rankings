@@ -77,19 +77,33 @@ const getRanking = (seasonId) => {
 const setRanking = (ranking) => {
     const rankingHtml = ranking.map(r => (`
           <tr>
-            <th scope="row">1</th>
+            <th scope="row">${r.position}</th>
             <td>${r.team.name}</td>
-            <td>38</td>
-            <td>32</td>
-            <td>2</td>
-            <td>4</td>
-            <td>95:23</td>
-            <td>98</td>
+            <td>${r.overall_played}</td>
+            <td>${r.overall_win}</td>
+            <td>${r.overall_draw}</td>
+            <td>${r.overall_loose}</td>
+            <td>${r.goal_difference}</td>
+            <td>${r.points}</td>
         </tr>
     `));
 
     $('.ranking tbody').html(rankingHtml.join(''));
     $('.ranking').show();
+
+};
+
+const getTeam = (teamId) => {
+    const request = $.ajax({
+        url: `${API_URL}/teams/${teamId}`,
+        method: "GET",
+        data: { api_token : API_TOKEN },
+    });
+    request.done(function (response) {
+        console.log('aggfng');
+        teams = response.data;
+        setTeam(teams);
+    });
 };
 
 $(document).ready(() => {
@@ -98,6 +112,16 @@ $(document).ready(() => {
     $('.competition-list').on('click', '.season', function () {
         const seasonId = $(this).attr('data-season-id');
         getRanking(seasonId);
+    });
+});
+
+$(document).ready(() => {
+    setCompetitions();
+    setRanking();
+
+    $('.ranking').on('click', 'r.team.name', function () {
+        const teamId = $(this).attr('xxxxx');
+        getTeam(teamId);
     });
 });
 
