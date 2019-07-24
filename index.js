@@ -76,7 +76,7 @@ const getRanking = (seasonId) => {
 
 const setRanking = (ranking) => {
     const rankingHtml = ranking.map(r => (`
-          <tr>
+        <tr data-id="${r.team.id}">
             <th scope="row">${r.position}</th>
             <td>${r.team.name}</td>
             <td>${r.overall_played}</td>
@@ -99,11 +99,52 @@ const getTeam = (teamId) => {
         method: "GET",
         data: { api_token : API_TOKEN },
     });
+
     request.done(function (response) {
-        console.log('aggfng');
-        teams = response.data;
-        setTeam(teams);
+        setTeam(response);
     });
+};
+
+const setTeam = (team) => {
+    let teamHtml = `
+            <img src="${team.logo}" alt="${team.name}"/>
+            <h5>${team.name}</h5>
+    `;
+
+    if(team.twitter) teamHtml += `<div>${team.twitter}</div>`;
+
+    $('.team__info').html(teamHtml);
+};
+
+const getPlayers = (teamId) => {
+    const request = $.ajax({
+        url: `${API_URL}/players/team/${teamId}`,
+        method: "GET",
+        data: { api_token : API_TOKEN },
+    });
+
+    request.done(function (response) {
+        setPlayers(response.data);
+    }).fail(function(xhr, status, error) {
+        var errorMessage = xhr.status + ': ' + xhr.statusText
+        alert('Error - ' + errorMessage);
+    });
+};
+
+const setPlayers = (players) => {
+    if(players.length === 0) {
+        $('.team__players').html('No players found.');
+    } else {
+        const playersHtml = players.map(player => `
+            <div class="player">
+                   <img class="player__img" src="${player.photo}"/>
+                   <div class="player__name">${player.shirt_number}. ${player.fullname}</div>
+                   <div class="player__nationality">${player.nationality}</div>        
+            </div>
+        `);
+
+        $('.team__players').html(playersHtml);
+    }
 };
 
 $(document).ready(() => {
@@ -113,15 +154,11 @@ $(document).ready(() => {
         const seasonId = $(this).attr('data-season-id');
         getRanking(seasonId);
     });
-});
 
-$(document).ready(() => {
-    setCompetitions();
-    setRanking();
-
-    $('.ranking').on('click', 'r.team.name', function () {
-        const teamId = $(this).attr('xxxxx');
+    $('.ranking').on('click', 'tbody tr', function () {
+        const teamId = $(this).attr('data-id');
         getTeam(teamId);
+        getPlayers(teamId);
     });
 });
 
